@@ -1,6 +1,6 @@
 # 草木塔 / Somokuto
 
-種田山頭火の自由律俳句集『草木塔』を縦書きの美しいアニメーションで切り替え表示する、シンプルなバニラJavaScriptのウェブアプリケーション。
+種田山頭火の自由律俳句集『草木塔』を縦書きで切り替え表示する、シンプルなバニラJavaScriptのウェブアプリケーション。
 
 A simple vanilla JavaScript web application that displays free-verse haikus from Santoka Taneda's collection _Somokuto_ (草木塔) in beautiful, vertically aligned animated transitions.
 
