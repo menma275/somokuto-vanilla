@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>草木塔 / Somokuto</title>
+    <!-- Bilingual Meta Description -->
+    <meta name="description" lang="ja" content="種田山頭火の句集『草木塔』から、縦書きの文字で俳句が切り替わり表示されます。" />
+    <meta name="description" lang="en" content="Haikus from Santoka Taneda's collection &quot;Somokuto&quot; are displayed in vertical text, switching dynamically." />
+    <meta
+      name="description"
+      content="種田山頭火の句集『草木塔』から、縦書きの文字で俳句が切り替わり表示されます。 / Haikus from Santoka Taneda's collection &quot;Somokuto&quot; are displayed in vertical text, switching dynamically."
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="草木塔 / Somokuto" />
+    <meta property="og:description" content="種田山頭火の句集『草木塔』から、縦書きの文字で俳句が切り替わり表示されます。 / Haikus from Santoka Taneda's collection &quot;Somokuto&quot; are displayed in vertical text, switching dynamically." />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:locale:alternate" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="草木塔 / Somokuto" />
+    <meta name="twitter:description" content="種田山頭火の句集『草木塔』から、縦書きの文字で俳句が切り替わり表示されます。 / Haikus from Santoka Taneda's collection &quot;Somokuto&quot; are displayed in vertical text, switching dynamically." />
+
+    <!-- Preconnect to Google Fonts for faster font loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Visually hidden h1 for accessibility and SEO best practices (adhering to the "no other info shown" rule visually) -->
+    <h1 class="sr-only">草木塔 — 種田山頭火 自由律俳句</h1>
+
+    <div id="haiku-container">
+      <div id="haiku" class="haiku"></div>
+    </div>
+
+    <!-- Load data first, then execution script -->
+    <script src="data.js" defer></script>
+    <script src="script.js" defer></script>
+  </body>
+</html>
