@@ -23,11 +23,22 @@ A simple vanilla JavaScript web application that displays free-verse haikus from
 
 #### 表示速度（インターバル）の変更
 
-URLのクエリパラメータ（`sec`）を設定することで、俳句が切り替わる速度をカスタマイズできる（デフォルトは5秒）。
+デフォルト（クエリパラメータを指定しない場合）では自動遷移せず、ランダムに選ばれた最初の1句が表示され続けます。
+URLのクエリパラメータ（`sec`）を指定することで、自動切り替えを有効にし、その表示速度をカスタマイズできます。
 
 _例:_
 
 - 3秒間隔で切り替える: `index.html?sec=3`
+
+#### 表示開始位置の指定
+
+URLのクエリパラメータに `index` または `idx` を指定することで、シャッフル後の配列における指定した位置の俳句から表示を開始できます。
+配列の長さ以上の数値を指定した場合は、配列サイズでの剰余（`%`）を用いて範囲内に丸められた位置の俳句が表示されます。
+
+_例:_
+
+- シャッフル後の配列の3番目（4つ目）の俳句を表示する: `index.html?index=3`
+- 指定インデックスから開始して3秒間隔で切り替える: `index.html?index=3&sec=3`
 
 ---
 
@@ -50,8 +61,19 @@ Open `index.html` directly in your browser, or launch it with a local web server
 
 #### Changing the Display Speed (Interval)
 
-You can customize the speed at which the haikus switch by setting the URL query parameter (`sec`) (default is 5 seconds).
+By default (without query parameters), automatic transitions are disabled, and the first randomly selected haiku will remain on screen.
+You can enable automatic switching and customize the duration by setting the URL query parameter (`sec`).
 
 _Example:_
 
 - Switch at a 3-second interval: `index.html?sec=3`
+
+#### Specifying the Starting Index
+
+You can set the starting position within the shuffled haiku list by adding the `index` or `idx` URL query parameter.
+If the specified index is greater than or equal to the array length, it will automatically wrap around using the modulo (`%`) operator.
+
+_Example:_
+
+- Start from the 3rd index (4th item) of the shuffled list: `index.html?index=3`
+- Start from the 3rd index and switch at a 3-second interval: `index.html?index=3&sec=3`

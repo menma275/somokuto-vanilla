@@ -8,7 +8,7 @@ function shuffleArray(array) {
   return newArray;
 }
 
-// Get display interval from URL query parameter (default: 5 seconds)
+// Get display interval from URL query parameter (returns null if not specified or invalid)
 function getDisplayInterval() {
   const urlParams = new URLSearchParams(window.location.search);
   const secParam = urlParams.get('sec');
@@ -18,7 +18,21 @@ function getDisplayInterval() {
       return parsed * 1000;
     }
   }
-  return 5000; // 5 seconds in milliseconds
+  return null; 
+}
+
+// Get starting index from URL query parameter (returns 0 if not specified or invalid)
+function getStartingIndex(arrayLength) {
+  if (arrayLength === 0) return 0;
+  const urlParams = new URLSearchParams(window.location.search);
+  const indexParam = urlParams.get('index') || urlParams.get('idx');
+  if (indexParam) {
+    const parsed = parseInt(indexParam, 10);
+    if (!isNaN(parsed) && parsed >= 0) {
+      return parsed % arrayLength;
+    }
+  }
+  return 0;
 }
 
 const DISPLAY_INTERVAL = getDisplayInterval();
@@ -31,7 +45,7 @@ function initializeHaikus() {
     return;
   }
   shuffledHaikus = shuffleArray(HAIKUS);
-  currentIndex = 0;
+  currentIndex = getStartingIndex(shuffledHaikus.length);
 }
 
 function showNextHaiku() {
@@ -57,6 +71,11 @@ function showNextHaiku() {
   // 1. Start fade-in transition
   haikuElement.classList.remove('transitioning-out');
   haikuElement.classList.add('visible');
+
+  // If there is no display interval, do not schedule transitions
+  if (DISPLAY_INTERVAL === null) {
+    return;
+  }
 
   // 2. Schedule fade-out transition 800ms before the end of the cycle
   const fadeOutDelay = Math.max(0, DISPLAY_INTERVAL - 800);
