@@ -44,6 +44,23 @@ _例:_
 - シャッフル後の配列の3番目（4つ目）の俳句を表示する: `index.html?index=3`
 - 指定インデックスから開始して3秒間隔で切り替える: `index.html?index=3&sec=3`
 
+#### カラーテーマの反転
+
+URLのクエリパラメータに `theme=reverse` または `invert` などを指定することで、カラーテーマを反転させ、白背景に黒文字で表示できます。
+指定しない場合のデフォルトは、黒背景に白文字（現状のスタイル）です。
+
+_例:_
+
+- カラーテーマを反転させて表示する: `index.html?theme=reverse` または `index.html?invert`
+
+#### スクリーンショットモード
+
+URLのクエリパラメータに `screenshot` を指定することで、フェードインやぼかしなどのトランジションアニメーションを完全に無効化し、俳句を最初から即座に表示させることができます。
+
+_例:_
+
+- アニメーションを無効化して表示する: `index.html?screenshot`
+
 ---
 
 ## English
@@ -81,3 +98,21 @@ _Example:_
 
 - Start from the 3rd index (4th item) of the shuffled list: `index.html?index=3`
 - Start from the 3rd index and switch at a 3-second interval: `index.html?index=3&sec=3`
+
+#### Inverting the Color Theme
+
+You can invert the color theme (white background with black text) by specifying `theme=reverse` or `invert` as a URL query parameter.
+By default, without these parameters, the theme remains a black background with white text.
+
+_Example:_
+
+- Display with inverted colors: `index.html?theme=reverse` or `index.html?invert`
+
+#### Screenshot Mode
+
+You can disable all transition animations (such as fade-in and blur effects) and show the haiku immediately by specifying `screenshot` as a URL query parameter.
+
+_Example:_
+
+- Display with animations disabled: `index.html?screenshot`
+

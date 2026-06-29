@@ -21,6 +21,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Inverted Theme: White background with black text */
+body.inverted {
+  background-color: #fff;
+  color: #000;
+}
+
 #haiku-container {
   position: relative;
   width: 100%;
@@ -80,3 +86,12 @@ body {
   white-space: nowrap;
   border: 0;
 }
+
+/* Screenshot Mode: Disable transitions and show haiku immediately */
+body.screenshot-mode .haiku {
+  opacity: 1 !important;
+  filter: none !important;
+  transform: translate(-50%, -50%) !important;
+  transition: none !important;
+}
+

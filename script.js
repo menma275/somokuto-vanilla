@@ -93,6 +93,19 @@ function showNextHaiku() {
 
 // Start once DOM is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.has('screenshot')) {
+    document.body.classList.add('screenshot-mode');
+  }
+  // Invert color theme (white background with black text) if specified in query parameters
+  if (
+    urlParams.has('invert') ||
+    urlParams.has('reverse') ||
+    urlParams.get('theme') === 'reverse' ||
+    urlParams.get('theme') === 'light'
+  ) {
+    document.body.classList.add('inverted');
+  }
   initializeHaikus();
   showNextHaiku();
 });
