@@ -46,12 +46,12 @@ _例:_
 
 #### カラーテーマの反転
 
-URLのクエリパラメータに `theme=reverse` または `invert` などを指定することで、カラーテーマを反転させ、白背景に黒文字で表示できます。
+URLのクエリパラメータに `theme=light` を指定することで、カラーテーマを反転させ、白背景に黒文字で表示できます。
 指定しない場合のデフォルトは、黒背景に白文字（現状のスタイル）です。
 
 _例:_
 
-- カラーテーマを反転させて表示する: `index.html?theme=reverse` または `index.html?invert`
+- カラーテーマを反転させて表示する: `index.html?theme=light`
 
 #### スクリーンショットモード
 
@@ -101,12 +101,12 @@ _Example:_
 
 #### Inverting the Color Theme
 
-You can invert the color theme (white background with black text) by specifying `theme=reverse` or `invert` as a URL query parameter.
-By default, without these parameters, the theme remains a black background with white text.
+You can invert the color theme (white background with black text) by specifying `theme=light` as a URL query parameter.
+By default, without this parameter, the theme remains a black background with white text.
 
 _Example:_
 
-- Display with inverted colors: `index.html?theme=reverse` or `index.html?invert`
+- Display with inverted colors: `index.html?theme=light`
 
 #### Screenshot Mode
 
